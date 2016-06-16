@@ -18,7 +18,7 @@
 			development					: false
         }, o);
 
-        return this.each( function(  ) {
+        return this.each( function() {
 		
 			var $container = $(this);
 			var dropdown = $(s.dropdownSelector, this);
@@ -122,7 +122,12 @@
 					 });
 				}
 				
-				if ($dropdownTabs().length <= 0) {dropdown.hide();} else {dropdown.show();}
+				if ($dropdownTabs().length <= 0) {
+					dropdown.hide();
+				} else {
+					dropdown.show();
+					$container.append( dropdown );
+				}
 			}
 			
 			//init
